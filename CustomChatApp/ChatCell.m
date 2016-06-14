@@ -11,7 +11,7 @@
 
 @interface ChatCell()
 
-@property (nonatomic) NSString* message;
+
 
 @end
 
@@ -30,7 +30,8 @@
 
 - (void) setupLayout; {
     
-    self.lblChatMessage.text = @"Short messageksjdfl;asdjflaksjdflaksdjflskadjfLongmessage\nasd";
+    self.lblChatMessage.text = self.message.message;
+//    self.lblChatMessage.text = @"aklsjdfkldjsfkladshfjkadhsbfadfajkwfhdszbfhdfhafhdszfhadsfihadsfhdjkfbh";
     
     self.vPrefix.layer.cornerRadius = self.imvAvatar.frame.size.width/4;
     self.vPrefix.clipsToBounds = YES;
@@ -48,18 +49,9 @@
     self.imvAvatar.layer.borderWidth = 2.0f;
     self.imvAvatar.layer.zPosition = 4;
     
-//    UIView* backgroundView = [[UIView alloc] init];
-//    [backgroundView setBackgroundColor:[UIColor clearColor]];
-//    [self setSelectedBackgroundView:backgroundView];
-
-    
     [self layoutIfNeeded];
 
 }
 
-- (void) setMessage: (NSString*)message; {
-    self.message = message;
-    [self setupLayout];
-}
 
 @end

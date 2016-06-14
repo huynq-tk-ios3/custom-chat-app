@@ -7,10 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "ChatMessage.h"
 #import "ChatCell.h"
 
 @interface ViewController ()
-@property NSArray* messages;
+@property NSMutableArray* chatMessages;
 @end
 
 @implementation ViewController
@@ -18,18 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    [self loadData];
     [self setupAvatarImage];
     [self setupTableView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
     
-    self.messages = [[NSArray alloc] initWithObjects:
-                     @"short message",
-                     @"longggggggggggg mesageeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee kjalsdfjasldfjalsfjalskfjalskdfjalskdfjalskdfjalskfjaasdasdasdasdasd", nil];
+    
 }
 
 - (void) setupAvatarImage; {
@@ -45,12 +43,18 @@
     self.tbvChat.rowHeight = UITableViewAutomaticDimension;
     self.tbvChat.estimatedRowHeight = 100.0f;
     self.tbvChat.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.tbvChat setShowsHorizontalScrollIndicator:NO];
+    [self.tbvChat setShowsVerticalScrollIndicator:NO];
+}
+
+- (void) loadData; {
+    self.chatMessages = [ChatMessage getMessages];
 }
 
 #pragma mark - UITableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;{
-    return 10;
+    return 100;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;{
@@ -58,7 +62,19 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath; {
-    ChatCell* chatCell = [tableView dequeueReusableCellWithIdentifier:@"CellLeft"];
+    
+    ChatMessage* chatMessage = self.chatMessages[indexPath.row % self.chatMessages.count];
+    ChatCell* chatCell = nil;
+    
+    if([chatMessage.alias isEqualToString:@""]) {
+        /* Your message */
+        chatCell = [tableView dequeueReusableCellWithIdentifier:@"CellRight"];
+    } else {
+        /* Partner message */
+        chatCell = [tableView dequeueReusableCellWithIdentifier:@"CellLeft"];
+    }
+    
+    chatCell.message = chatMessage;
     [chatCell setupLayout];
     
     return chatCell;

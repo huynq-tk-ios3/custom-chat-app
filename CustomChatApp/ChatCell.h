@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChatMessage.h"
 
 @interface ChatCell : UITableViewCell
 
@@ -16,7 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblChatMessage;
 @property (weak, nonatomic) IBOutlet UIView *vChatMessage;
 
+@property (nonatomic) ChatMessage* message;
+
 - (void) setupLayout;
-- (void) setMessage: (NSString*)message;
 
 @end

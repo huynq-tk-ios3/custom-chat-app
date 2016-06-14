@@ -14,5 +14,6 @@
 @property NSString* alias;
 
 - (instancetype) initWithMessage: (NSString*)message Alias:(NSString*)alias;
++ (NSMutableArray*) getMessages;
 
 @end
