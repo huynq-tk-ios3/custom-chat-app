@@ -22,12 +22,12 @@
     [self loadData];
     [self setupAvatarImage];
     [self setupTableView];
+    [self setUpGestures];
+    [self setupChatBox];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
-    
 }
 
 - (void) setupAvatarImage; {
@@ -37,6 +37,11 @@
     
     self.imvPartnerAvatar.layer.borderColor = [UIColor whiteColor].CGColor;
     self.imvPartnerAvatar.layer.borderWidth = 2.0f;
+}
+
+- (void) setupChatBox; {
+    [self.vChatBox removeFromSuperview];
+    [self becomeFirstResponder];
 }
 
 - (void) setupTableView; {
@@ -49,6 +54,23 @@
 
 - (void) loadData; {
     self.chatMessages = [ChatMessage getMessages];
+}
+
+- (void) setUpGestures; {
+    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewDidTap:)];
+    [self.view addGestureRecognizer: tapGesture];
+}
+
+- (BOOL)isFirstResponder {
+    return YES;
+}
+
+- (BOOL) canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)viewDidTap:(UITapGestureRecognizer *)recognizer {
+    [self hideKeyboard];
 }
 
 #pragma mark - UITableView
@@ -84,4 +106,20 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
+#pragma MARK - ChatBox
+
+- (UIView *)inputAccessoryView {
+    return self.vChatBox;
+}
+
+- (void) hideKeyboard; {
+    [self.txvChatMessage resignFirstResponder];
+    [self becomeFirstResponder];
+}
+
+- (IBAction)btnSendMessageDidTap:(id)sender {
+    self.txvChatMessage.text = @"";
+    [self hideKeyboard];
+    
+}
 @end

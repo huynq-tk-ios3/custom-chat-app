@@ -12,6 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imvPartnerAvatar;
 @property (weak, nonatomic) IBOutlet UITableView *tbvChat;
+@property (weak, nonatomic) IBOutlet UIView *vChatBox;
+@property (weak, nonatomic) IBOutlet UITextView *txvChatMessage;
+- (IBAction)btnSendMessageDidTap:(id)sender;
 
 @end
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		840E516B1D0EEC5D006A6D01 /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E516A1D0EEC5D006A6D01 /* ChatMessage.m */; };
+		840FA88F1D0FECFA00ABFCFE /* paper_plane.png in Resources */ = {isa = PBXBuildFile; fileRef = 840FA88E1D0FECFA00ABFCFE /* paper_plane.png */; };
 		84547F7C1D0FB43900677B56 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 84547F7B1D0FB43900677B56 /* data.json */; };
 		84547F7E1D0FB83B00677B56 /* guy_avatar.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 84547F7D1D0FB83B00677B56 /* guy_avatar.JPG */; };
 		849A2FF01D0ED61600472783 /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A2FEF1D0ED61600472783 /* ChatCell.m */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		840E51691D0EEC5D006A6D01 /* ChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessage.h; sourceTree = "<group>"; };
 		840E516A1D0EEC5D006A6D01 /* ChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessage.m; sourceTree = "<group>"; };
+		840FA88E1D0FECFA00ABFCFE /* paper_plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper_plane.png; sourceTree = "<group>"; };
 		84547F7B1D0FB43900677B56 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		84547F7D1D0FB83B00677B56 /* guy_avatar.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guy_avatar.JPG; sourceTree = "<group>"; };
 		849A2FEE1D0ED61600472783 /* ChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatCell.h; sourceTree = "<group>"; };
@@ -69,6 +71,13 @@
 			name = Labels;
 			sourceTree = "<group>";
 		};
+		840FA8901D100F9600ABFCFE /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
 		849A2FED1D0ED5F300472783 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +106,7 @@
 		84D20C211D0EBB730079F4A1 /* CustomChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				840FA8901D100F9600ABFCFE /* Libs */,
 				840E516C1D0EF78C006A6D01 /* Labels */,
 				840E51681D0EEC42006A6D01 /* Models */,
 				849A2FED1D0ED5F300472783 /* Cells */,
@@ -119,6 +129,7 @@
 				84D20C391D0EBF030079F4A1 /* background.jpg */,
 				84547F7D1D0FB83B00677B56 /* guy_avatar.JPG */,
 				84D20C3B1D0EC2320079F4A1 /* avatar_large.png */,
+				840FA88E1D0FECFA00ABFCFE /* paper_plane.png */,
 				84D20C231D0EBB730079F4A1 /* main.m */,
 				84547F7B1D0FB43900677B56 /* data.json */,
 			);
@@ -185,6 +196,7 @@
 			files = (
 				84D20C3C1D0EC2320079F4A1 /* avatar_large.png in Resources */,
 				84D20C321D0EBB730079F4A1 /* LaunchScreen.storyboard in Resources */,
+				840FA88F1D0FECFA00ABFCFE /* paper_plane.png in Resources */,
 				84D20C3A1D0EBF030079F4A1 /* background.jpg in Resources */,
 				84D20C2F1D0EBB730079F4A1 /* Assets.xcassets in Resources */,
 				84547F7E1D0FB83B00677B56 /* guy_avatar.JPG in Resources */,
